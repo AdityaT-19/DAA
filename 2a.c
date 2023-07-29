@@ -10,14 +10,15 @@ void writeCount(int n, FILE *fp)
 	fprintf(fp,"%d\t%d\n",n,c);
 	c=0;
 }
-void lSearch(int *a,int n,int key)
+int lSearch(int *a,int n,int key)
 {
 	for(int i=0;i<n;i++)
 	{
 		c++;
 		if(a[i]==key)
-			break;
+			return i;
 	}
+	return -1;
 }
 void main()
 {
