@@ -8,12 +8,13 @@ void bfs(int s)
 	for(int i=1;i<=n;i++)
 	{	
 		c++;
-		if(a[s][i]&&p[s]!=i&&visit[i])
+		if(a[s][i]&&p[s]!=i&&visit[i]==1)
 			acy=0;
-		if(a[s][i]&&!visit[i])
+		if(a[s][i]&&visit[i]==-1)
 		{
 			q[++r]=i;
 			p[i]=s;
+			visit[i]=0;
 		}
 		if(r>=f)
 		{
@@ -59,7 +60,7 @@ void main()
 	printf("Enter the number of vertices : ");
 	scanf("%d",&n);
 	for(i=1;i<=n;i++)
-		visit[i]=0;
+		visit[i]=-1;
 	printf("Enter the adjacency matrix : \n");
 	for(i=1;i<=n;i++)
 		for(j=1;j<=n;j++)
