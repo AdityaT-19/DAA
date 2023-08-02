@@ -14,7 +14,7 @@ void merge(int *b, int p, int *C, int q, int *a)
       a[k++] = C[j++];
   }
   if (i == p)
-    while (j < p)
+    while (j < q)
       a[k++] = C[j++];
   else
     while (i < p)
